@@ -1,6 +1,7 @@
 package Logik;
 
 import Util.VerySimpleFormatter;
+import logKlasser.*;
 
 import java.io.IOException;
 import java.util.logging.ConsoleHandler;
@@ -13,7 +14,7 @@ public class Controller {
 
 
 
-    private static final Logger LOGGER = Logger.getLogger(Controller.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Logik.Controller.class.getName());
 
     //todo Husk at lave stien om, så den passer til dig. Husk pwd på linux for at få stien !
     FileHandler handler = new FileHandler("/Users/nbh/Desktop/logs/controller_logger.log");
@@ -36,13 +37,13 @@ public class Controller {
 public void valg(int i) throws IOException {
 
 
-//    Level1 level1 = new Level1();
-//    Level2 level2 = new Level2();
-//    Level3 level3 = new Level3();
-//    Level4 level4 = new Level4();
-//    Level5 level5 = new Level5();
-//    Level6 level6 = new Level6();
-//    Level7 level7 = new Level7();
+    Level1 level1 = new Level1();
+    Level2 level2 = new Level2();
+    Level3 level3 = new Level3();
+    Level4 level4 = new Level4();
+    Level5 level5 = new Level5();
+    Level6 level6 = new Level6();
+    Level7 level7 = new Level7();
 
     switch(i)
 
@@ -51,6 +52,7 @@ public void valg(int i) throws IOException {
         case 7:
             LOGGER.log(Level.SEVERE, "LOGGER Servere til fil (7)", new RuntimeException("udskriver Servere til consollen "));
 //            level7.log();
+
             break;
         case 6:
             LOGGER.log(Level.WARNING, "LOGGER WARNING til fil (6)", new RuntimeException("udskriver WARNING til consollen "));
@@ -73,8 +75,8 @@ public void valg(int i) throws IOException {
 //            level2.log();
             break;
         case 1:
-            LOGGER.log(Level.FINEST, "det her er den aller fineste FRA SWITCHEN");
-          //  level1.log();
+          //  LOGGER.log(Level.FINEST, "det her er den aller fineste FRA SWITCHEN");
+            level1.log();
             break;
 
         default:
