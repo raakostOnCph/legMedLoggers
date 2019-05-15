@@ -1,7 +1,6 @@
 package logKlasser;
 
-import GUI.VerySimpleFormatter;
-import Logik.Controller;
+import Util.VerySimpleFormatter;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
@@ -10,23 +9,25 @@ import java.util.logging.Logger;
 
 public class Level7 {
 
-    private static final Logger logger = Logger.getLogger(Controller.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Level7.class.getName());
+
+    //todo Husk at lave stien om, så den passer til dig. Husk pwd på linux for at få stien !
     FileHandler handler = new FileHandler("/Users/nbh/Desktop/logs/k7.log");
 
 
     public Level7() throws IOException {
 
 
-        logger.setLevel(Level.FINEST);
+        LOGGER.setLevel(Level.FINEST);
 
-        logger.addHandler(handler);
+        LOGGER.addHandler(handler);
         handler.setFormatter(new VerySimpleFormatter());
 
     }
 
     public void log() {
 
-        logger.log(Level.SEVERE, "logger Servere til fil (7)", new RuntimeException("udskrivr Servere til consollen "));
+        LOGGER.log(Level.SEVERE, "LOGGER Servere til fil (7)", new RuntimeException("udskrivr Servere til consollen "));
 
 
 

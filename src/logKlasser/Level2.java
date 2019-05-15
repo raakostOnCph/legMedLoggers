@@ -1,7 +1,6 @@
 package logKlasser;
 
-import GUI.VerySimpleFormatter;
-import Logik.Controller;
+import Util.VerySimpleFormatter;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
@@ -10,23 +9,25 @@ import java.util.logging.Logger;
 
 public class Level2 {
 
-    private static final Logger Controllerlogger = Logger.getLogger(Controller.class.getName());
-    FileHandler Conhandler = new FileHandler("/Users/nbh/Desktop/logs/k2.log");
+    private static final Logger LOGGER = Logger.getLogger(Level2.class.getName());
+
+    //todo Husk at lave stien om, så den passer til dig. Husk pwd på linux for at få stien !
+    FileHandler handler = new FileHandler("/Users/nbh/Desktop/logs/k2.log");
 
 
     public Level2() throws IOException {
 
 
-        Controllerlogger.setLevel(Level.FINEST);
+        LOGGER.setLevel(Level.FINEST);
 
-        Controllerlogger.addHandler(Conhandler);
-        Conhandler.setFormatter(new VerySimpleFormatter());
+        LOGGER.addHandler(handler);
+        handler.setFormatter(new VerySimpleFormatter());
 
     }
 
     public void log() {
 
-        Controllerlogger.log(Level.FINER, "logger Servere til fil (2)", new RuntimeException("udskrivr Servere til consollen "));
+        LOGGER.log(Level.FINER, "LOGGER Servere til fil (2)", new RuntimeException("udskrivr Servere til consollen "));
 
 
 

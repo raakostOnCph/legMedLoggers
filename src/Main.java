@@ -1,4 +1,6 @@
-import GUI.Input;
+
+
+import GUI.TerminalInput;
 import GUI.Menu;
 import Logik.Controller;
 import Util.VerySimpleFormatter;
@@ -34,7 +36,7 @@ public class Main {
 
 
 
-        Input input = new Input();
+        TerminalInput terminalInput = new TerminalInput();
 
        String go = "j";
 
@@ -48,10 +50,10 @@ public class Main {
 
             System.out.println(Menu.valg);
 
-            controller.valg(input.getInt("skriv et tal"));
+            controller.valg(terminalInput.getInt("skriv et tal"));
 
 
-           go = input.getinput("j for at forsætte ");
+           go = terminalInput.getinput("j for at forsætte ");
       }
 
 

@@ -1,6 +1,6 @@
 package Logik;
 
-import GUI.VerySimpleFormatter;
+import Util.VerySimpleFormatter;
 
 import java.io.IOException;
 import java.util.logging.ConsoleHandler;
@@ -14,6 +14,8 @@ public class Controller {
 
 
     private static final Logger LOGGER = Logger.getLogger(Controller.class.getName());
+
+    //todo Husk at lave stien om, så den passer til dig. Husk pwd på linux for at få stien !
     FileHandler handler = new FileHandler("/Users/nbh/Desktop/logs/controller_logger.log");
 
 
@@ -23,11 +25,11 @@ public class Controller {
 
         LOGGER.addHandler(handler);
         handler.setFormatter(new VerySimpleFormatter());
-        handler.setLevel(Level.INFO);
+        handler.setLevel(Level.FINEST);       // her sætter vi niveauet for logfilen
 
         ConsoleHandler Chandler = new ConsoleHandler();
         LOGGER.addHandler(Chandler);
-        Chandler.setLevel(Level.FINEST);
+        Chandler.setLevel(Level.FINEST); // her sætter vi niveauet for consollen
 
     }
 
@@ -47,27 +49,27 @@ public void valg(int i) throws IOException {
     {
 
         case 7:
-            LOGGER.log(Level.SEVERE, "logger Servere til fil (7)", new RuntimeException("udskriver Servere til consollen "));
+            LOGGER.log(Level.SEVERE, "LOGGER Servere til fil (7)", new RuntimeException("udskriver Servere til consollen "));
 //            level7.log();
             break;
         case 6:
-            LOGGER.log(Level.WARNING, "logger WARNING til fil (6)", new RuntimeException("udskriver WARNING til consollen "));
+            LOGGER.log(Level.WARNING, "LOGGER WARNING til fil (6)", new RuntimeException("udskriver WARNING til consollen "));
 //            level6.log();
             break;
         case 5:
-            LOGGER.log(Level.INFO, "logger INFO til fil (5)", new RuntimeException("udskriver INFO til consollen "));
+            LOGGER.log(Level.INFO, "LOGGER INFO til fil (5)", new RuntimeException("udskriver INFO til consollen "));
 //            level5.log();
             break;
         case 4:
-            LOGGER.log(Level.CONFIG, "logger CONFIG til fil (4)", new RuntimeException("udskriver CONFIG til consollen "));
+            LOGGER.log(Level.CONFIG, "LOGGER CONFIG til fil (4)", new RuntimeException("udskriver CONFIG til consollen "));
 //            level4.log();
             break;
         case 3:
-            LOGGER.log(Level.FINE, "logger FINE til fil (3)", new RuntimeException("udskriver FINE til consollen "));
+            LOGGER.log(Level.FINE, "LOGGER FINE til fil (3)", new RuntimeException("udskriver FINE til consollen "));
 //            level3.log();
             break;
         case 2:
-            LOGGER.log(Level.FINER, "logger FINER til fil (2)", new RuntimeException("udskrivr FINER til consollen "));
+            LOGGER.log(Level.FINER, "LOGGER FINER til fil (2)", new RuntimeException("udskrivr FINER til consollen "));
 //            level2.log();
             break;
         case 1:
