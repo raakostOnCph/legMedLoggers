@@ -10,23 +10,23 @@ import java.util.logging.Logger;
 
 public class Level6 {
 
-    private static final Logger Controllerlogger = Logger.getLogger(Controller.class.getName());
-    FileHandler Conhandler = new FileHandler("/Users/nbh/Desktop/logs/k6.log");
+    private static final Logger logger = Logger.getLogger(Controller.class.getName());
+    FileHandler handler = new FileHandler("/Users/nbh/Desktop/logs/k6.log");
 
 
     public Level6() throws IOException {
 
 
-        Controllerlogger.setLevel(Level.FINEST);
+        logger.setLevel(Level.FINEST);
 
-        Controllerlogger.addHandler(Conhandler);
-        Conhandler.setFormatter(new VerySimpleFormatter());
+        logger.addHandler(handler);
+        handler.setFormatter(new VerySimpleFormatter());
 
     }
 
     public void log() {
 
-        Controllerlogger.log(Level.WARNING, "logger Servere til fil (6)", new RuntimeException("udskrivr Servere til consollen "));
+        logger.log(Level.WARNING, "logger Servere til fil (6)", new RuntimeException("udskrivr Servere til consollen "));
 
 
 

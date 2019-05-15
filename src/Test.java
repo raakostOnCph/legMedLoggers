@@ -1,3 +1,5 @@
+import Util.VerySimpleFormatter;
+
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
@@ -31,7 +33,7 @@ public class Test {
     public String getNavn(String s) {
 
 //        logger.addHandler(handler);
-//        handler.setFormatter(new VerySimpleFormatter());
+//        handler.setFormatter(new Util.VerySimpleFormatter());
 
 
         logger.log(Level.SEVERE, "Hello logging");

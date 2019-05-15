@@ -10,23 +10,23 @@ import java.util.logging.Logger;
 
 public class Level5 {
 
-    private static final Logger Controllerlogger = Logger.getLogger(Controller.class.getName());
-    FileHandler Conhandler = new FileHandler("/Users/nbh/Desktop/logs/k5.log");
+    private static final Logger logger = Logger.getLogger(Controller.class.getName());
+    FileHandler handler = new FileHandler("/Users/nbh/Desktop/logs/k5.log");
 
 
     public Level5() throws IOException {
 
 
-        Controllerlogger.setLevel(Level.FINEST);
+        logger.setLevel(Level.FINEST);
 
-        Controllerlogger.addHandler(Conhandler);
-        Conhandler.setFormatter(new VerySimpleFormatter());
+        logger.addHandler(handler);
+        handler.setFormatter(new VerySimpleFormatter());
 
     }
 
     public void log() {
 
-        Controllerlogger.log(Level.INFO, "logger Servere til fil (5)", new RuntimeException("udskrivr Servere til consollen "));
+        logger.log(Level.INFO, "logger Servere til fil (5)", new RuntimeException("udskrivr Servere til consollen "));
 
 
 

@@ -10,23 +10,23 @@ import java.util.logging.Logger;
 
 public class Level7 {
 
-    private static final Logger Controllerlogger = Logger.getLogger(Controller.class.getName());
-    FileHandler Conhandler = new FileHandler("/Users/nbh/Desktop/logs/k7.log");
+    private static final Logger logger = Logger.getLogger(Controller.class.getName());
+    FileHandler handler = new FileHandler("/Users/nbh/Desktop/logs/k7.log");
 
 
     public Level7() throws IOException {
 
 
-        Controllerlogger.setLevel(Level.FINEST);
+        logger.setLevel(Level.FINEST);
 
-        Controllerlogger.addHandler(Conhandler);
-        Conhandler.setFormatter(new VerySimpleFormatter());
+        logger.addHandler(handler);
+        handler.setFormatter(new VerySimpleFormatter());
 
     }
 
     public void log() {
 
-        Controllerlogger.log(Level.SEVERE, "logger Servere til fil (7)", new RuntimeException("udskrivr Servere til consollen "));
+        logger.log(Level.SEVERE, "logger Servere til fil (7)", new RuntimeException("udskrivr Servere til consollen "));
 
 
 
